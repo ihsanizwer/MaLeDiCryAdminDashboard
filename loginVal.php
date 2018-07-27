@@ -12,4 +12,5 @@
  	echo "error.php";
  }
 
+ $con->close();
  ?>
