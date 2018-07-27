@@ -55,6 +55,22 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./LogIn_files/ie10-viewport-bug-workaround.js.download"></script>
+    <script>
+        function login(){
+            var xhttp = new XMLHttpRequest();
+            var user = document.getElementById("inputEmail").value;
+            var pass = document.getElementById("inputPassword").value;
+            var params = 'username='+user+'&amp;password='+pass
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    window.location.replace(this.response);
+                    //alert(this.responseText);
+                }
+            };
+            xhttp.open("POST", 'loginVal.php', true);
+            xhttp.send(params);
+        }
+    </script>
   
 
 </body></html>
